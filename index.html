@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Teacher’s Day!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --transition: 1s ease;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      overflow: hidden;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+      z-index: 1000;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(8px);
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 600;
+      transition: 0.3s;
+      text-shadow: 0 0 8px rgba(0,0,0,0.8);
+    }
+    header a:hover {
+      color: #ffd166;
+      text-shadow: 0 0 15px #ffd166;
+    }
+
+    .section {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      transition: var(--transition);
+      color: white;
+    }
+
+    /* Backgrounds */
+    #home {
+      background: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    }
+    #wishes {
+      background: url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    }
+    #final {
+      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    }
+
+    .active {
+      left: 0;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(0,0,0,0.9), 0 0 25px #ffd166;
+      animation: fadeInDown 2s ease;
+    }
+    p {
+      font-size: 1.8rem;
+      font-weight: 600;
+      max-width: 900px;
+      line-height: 1.6;
+      text-shadow: 0 0 12px rgba(0,0,0,0.9);
+      animation: fadeInUp 2s ease;
+    }
+
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .highlight {
+      color: #ffd166;
+      font-weight: 800;
+      text-shadow: 0 0 10px #ffd166, 0 0 25px #ffbb55;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('wishes')">Wishes</a>
+    <a href="#" onclick="showSection('final')">Final</a>
+  </header>
+
+  <div id="home" class="section active">
+    <h1>Happy Teacher’s Day!</h1>
+    <p>Dear Teacher, thank you for being my guiding light in learning English.  
+       Your lessons are not just about grammar and vocabulary,  
+       they are about <span class="highlight">confidence, inspiration and growth</span>.</p>
+  </div>
+
+  <div id="wishes" class="section">
+    <h1>My Wishes for You</h1>
+    <p>
+      I wish you endless inspiration and joy in teaching!    
+      May your days be filled with success, kindness, and happiness.  
+      <br><br>
+      Thank you for always believing in me and showing me  
+      that English is not just a subject, but a <span class="highlight">path to the world</span>.
+    </p>
+  </div>
+
+  <div id="final" class="section">
+    <h1>THANK YOU!</h1>
+    <p>
+      For your patience, your wisdom, and your heart.  
+      I am truly grateful to have you as my English teacher.  
+      <br><br>
+      <span class="highlight">Happy Teacher’s Day!</span>
+    </p>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
